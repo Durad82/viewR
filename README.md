@@ -172,7 +172,12 @@ ${togglable("views/partials/card",card,toggle)}
 
 ### Insert a viewR component
 
-#
+-- Things become interesting here. You can have more control on rendering using viewR components.
+
+#### What is a viewR component ?
+
+viewR Conponent is a combination of a viewR snippet and a JS Class that can fetch data for snippet rendering. a viewR Component is made of – at least – a folder, a viewR snippet,
+ and a JS file containing a class extending VRComponent. Folder, .viewr and .js have to wear the same name (camelCase). Component class name must be the same, first letter uppercase.
 
 ## what it can’t do
 
