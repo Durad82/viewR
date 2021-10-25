@@ -23,9 +23,9 @@ This extension is based on "html-text-basic" TextMate grammar file, and intends 
 </body>
 ```
 
-### Make a reusable wrapping component
+### Make a reusable wrapping snippet
 
-#### Wrapping component
+#### Wrapping snippet
 
 With, for example, path : views/partials/pageBase.viewr.
 
@@ -56,12 +56,12 @@ viewR <span class="title__baseline">Demo</span>
 </html>
 ```
 
-#### Inserted component at INSERTION-POINT
+#### Inserted snippet at INSERTION-POINT
 
 at views/index.viewr path.
 
 ```html
-${outerComp("views/partials/pageBase")}
+${outerSnippet("views/partials/pageBase")}
 <main>
   <div>
     Hello world !
@@ -85,25 +85,25 @@ function controller(req, res) {
         }
 ```
 
-### Insert one or more components into a component
+### Insert one or more snippets into a snippet
 
-#### Parent component
+#### Parent snippet
 
-component(path:string [ , data:object ])
+snippet(path:string [ , data:object ])
 
 ```html
-${outerComponent("views/partials/pagebase")}
+${outerSnippet("views/partials/pagebase")}
 <main>
   <div>
     Hello World !
   <div>
   <div>
-    ${component("views/partials/card",card)}
+    ${snippet("views/partials/card",card)}
   <div>  
 </main>
 ```
 
-#### Child component
+#### Child snippet
 
 ```html
 <article>
@@ -111,6 +111,14 @@ ${outerComponent("views/partials/pagebase")}
 <div>Last Name : ${lastName}</div>
 </article>
 ```
+
+### Insert a repetition of a snippet with data array
+
+### Insert a togglable snippet
+
+### Insert a viewR component
+
+#
 
 ## what it can’t do
 
@@ -121,7 +129,7 @@ ${outerComponent("views/partials/pagebase")}
 
 - array handling
 - loops and conditionnal
-- complex components
+- complex snippets
 - data storage in engine instance
 
 ## Release Notes
