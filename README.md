@@ -114,7 +114,61 @@ ${outerSnippet("views/partials/pagebase")}
 
 ### Insert a repetition of a snippet with data array
 
+#### Parent snippet
+
+```html
+${wrapperSnippet("views/partials/pagebase")}
+<main>
+${loopSnippet("views/partials/card",cards)}
+</main>
+```
+
+#### Child snippet
+
+```html
+<article>
+<div>First Name : ${firstName}</div>
+<div>Last Name : ${lastName}</div>
+</article>
+```
+
 ### Insert a togglable snippet
+
+${togglable("path",data,dataKeyForToggle)}
+togglable() takes a third argument, which is the state value (boolean). Must be passed in data object of renderSync(), as shown bellow.
+
+#### JS side (example with express)
+
+```javascript
+app.get("/loop",(req, res) => {
+        res.status(200).send(viewr.renderSync("views/loop",
+            {
+                cards: users,
+            }));
+    } 
+);
+```
+
+#### Parent snippet
+
+```html
+${wrapperSnippet("views/partials/pagebase")}
+<main>
+<div class="toggleTestBox">
+<a href="/outerinner/?toggleVar=true">On</a>/<a href="/outerinner/?toggleVar=false">Off</a>
+${togglable("views/partials/card",card,toggle)}
+<div>
+</main>
+```
+
+#### Child snippet
+
+```html
+<article>
+<div>First Name : ${firstName}</div>
+<div>Last Name : ${lastName}</div>
+</article>
+```
 
 ### Insert a viewR component
 
