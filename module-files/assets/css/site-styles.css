@@ -1,6 +1,6 @@
 /* Accueil */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Festive&family=Raleway:wght@200;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Raleway:wght@200;400;600;800&display=swap');
 :root{
     --main-color:rgb(255, 0, 55);
 }
@@ -135,4 +135,18 @@ font-size: .8em;
     background-color: whitesmoke;
     border-radius: 1.5rem;
     padding:1.5rem;
+}
+
+/* STYLES POUR PAGE D INTRO */
+.main_intro{
+    padding-top: 2rem;
+    max-width: 800px;
+}
+.incipit{
+font-weight: 600;
+/* font-style: italic; */
+}
+.incipit p{
+/* margin: .2rem 0; */
+line-height: 1rem;
 }
