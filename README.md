@@ -11,7 +11,13 @@ This extension is based on "html-text-basic" TextMate grammar file, and intends 
 
 - fs module.
 
-## What it can do
+
+## what viewR can’t do
+
+- use express features for view engines
+- use js in .viewr files
+- 
+## What viewR can do
 
 ### Inject data via variables
 
@@ -179,16 +185,85 @@ ${togglable("views/partials/card",card,toggle)}
 viewR Conponent is a combination of a viewR snippet and a JS Class that can fetch data for snippet rendering. a viewR Component is made of – at least – a folder, a viewR snippet,
  and a JS file containing a class extending VRComponent. Folder, .viewr and .js have to wear the same name (camelCase). Component class name must be the same, first letter uppercase.
 
-## what it can’t do
+#### Parent
 
-- use express features for view engines
-- use js in .viewr files
+ ```html
+ ${wrapperSnippet("views/partials/pagebase")}
+<main class="main_gamelaunch">
+<div class="main__formwrapper">
+${component("views/partials/cardComponent")}
+<div>
+</main>
+```
+
+#### cardComponent.viewr
+
+```html
+<article>
+<img src="${picture}">
+<div>${first_name} ${last_name}</div>
+<div>from ${city}</div>
+</article>
+```
+
+#### cardComponent.js
+
+```javascript
+/* startCard component */
+const { VRComponent } = require("../../../core/viewr");
+const axios = require("axios");
+
+class CardComponent extends VRComponent {
+  queryOptions = {
+    /* url for data request via http request (axios) */
+    url: "http://localhost:4000/msg",
+  }
+  /*   
+  //you can define a data wrapper object and pass it to base class methods.
+  //default is 
+  dataReceiver={data:undefined}; */
+  /*
+  //property that stores ViewR string from component File
+   viewr="";
+   //property that stores in-construction HTML string
+  constructedView="";
+   */
+  constructor() {
+    /* super constructor needs script path for ViewR to access component files */
+    super(CardComponent.queryOptions, __dirname);
+  }
+
+  /*   You can override methods and pnoperties :
+    async queryData(dataReceiver) {
+      // Performs HTTP.get query via axios in order to fetch data, 
+      // and launch constructWith() in order to inject data into viewR string
+    };
   
+    constructWith=(data)=> { 
+  
+     // transform viewR string into a HTML string with data incorporated if any.
+     // returns an HTML string. 
+     };
+  
+    transformation=(viewRstring,data=undefined)=>{ 
+  //    is executed inside this.constructWith();
+    //  performs custom operations before constructWith() returns its string.
+    //  returns an HTML string. 
+    };
+    async render(){
+      // Async method called inside ViewR.render();
+      // Calls this.queryData()
+      // and returns final value of this.constructedView
+    }
+  */
+}
+
+module.exports = CardComponent;
+```
+
 ## TODO
 
 - array handling
-- loops and conditionnal
-- complex snippets
 - data storage in engine instance
 
 ## Release Notes
