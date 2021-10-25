@@ -3,13 +3,13 @@
 ## What is it
 
 VIEWR is a basic server side view renderer for Node Server.
-It relies on .viewr and .js files.
+It relies on .viewr and .js files, and doesn’t need Express.
 .viewr files are basically HTML-like files with viewr-specific features.
-This extension is based on "html-text-basic" TextMate grammar file, and intends to highlight ${viewR_variables}.
 
 ## Requirements
 
 - fs module.
+- axios.
 
 
 ## what viewR can’t do
