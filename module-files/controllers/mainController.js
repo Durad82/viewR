@@ -18,6 +18,9 @@ module.exports = {
                 cards: users,
             }));
     },
+    newsPage:(req,res)=>{
+        res.status(200).send(viewr.render("views/news"));
+    },
     outerinner: (req, res) => {
         let toggle = true;
         if (req.query.toggleVar === "true") {
@@ -37,16 +40,16 @@ module.exports = {
                 cards: users,
             }));
     },
-     component: async (req, res) => {
+    component: async (req, res) => {
         res.status(200).send(await viewr.render("views/component"));
     },
-    componentQueryResult:(req, res)=>{
+    componentQueryResult: (req, res) => {
         let test = req.query.msg;
         test += " wolrd";
         res.status(200).send(test);
     },
     test: (req, res) => {
-        res.status(200).json({ searchLabel:" Search",button:"Go !"});
+        res.status(200).json({ searchLabel: " Search", button: "Go !" });
     },
 
     /*  */

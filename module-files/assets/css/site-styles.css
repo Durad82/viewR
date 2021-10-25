@@ -7,16 +7,21 @@
 body{
     margin: 0; 
     font-family: "Raleway",sans-serif;
-    --header-height:6rem;
+    --header-height:7rem;
     --footer-height:5rem;
 }
 button,input{
     border: none;
     margin: 16px 0;
 }
+.viewr{
+    font-family: "Righteous",serif;
+    /* background-color: coral; */
+    color: var(--main-color);
+}
 .wrapper{
     width: 100%;
-    /* min-height: 100vh; */
+    min-height:calc(100vh - var(--header-height) - var(--footer-height));
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,16 +34,19 @@ button,input{
 }
 .header{
     height: var(--header-height);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:space-evenly;
+
+    /* background-color: coral; */
 }
 .main_nav{
     font-size: 1rem;
     font-family: "Raleway", sans-serif;
     text-decoration: none;
-    margin-bottom: .7rem;
+    /* margin-bottom: .7rem; */
 }
 .main_nav a{
     text-decoration: inherit;
@@ -62,9 +70,6 @@ button,input{
     width: 100%;
     background-image: linear-gradient(90deg, #FFFDD800 10%,var(--main-color) 50%,#FFFDD800 90%);
 }
-main{
-    min-height:calc(100vh - var(--header-height) - var(--footer-height));
-}
 .main__formwrapper{
     display: flex;
     align-items: stretch;
@@ -87,10 +92,9 @@ margin: 8px 0 16px 0;
 }
 .title{
     text-align: center;
+    margin:0;
     font-size: 2.2rem;
-    font-family: "Righteous",serif;
-    margin: 0;
-    color: var(--main-color);
+    height:2.2rem ;
 }
 .title__baseline{
     /* font-style: italic; */
@@ -103,7 +107,8 @@ margin: 8px 0 16px 0;
     width: 100%;
     height: var(--footer-height);
     text-align: center;
-    background-color: gray;
+    background-color: black;
+    color: white;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -144,6 +149,8 @@ font-size: .8em;
 }
 .incipit{
 font-weight: 600;
+background-color: whitesmoke;
+padding:1rem 2rem;
 /* font-style: italic; */
 }
 .incipit p{

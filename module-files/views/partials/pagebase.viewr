@@ -9,22 +9,23 @@
 </head>
 <body>
 <header class="header">
-<h1 class="title"><a class="a_reset" href="/">
+<h1 class="title viewr"><a class="a_reset" href="/">
 viewR <span class="title__baseline">Demo</a></span>
+</h1>
 <nav class="main_nav">
+<a href="/news">News</a>
 <a href="https://github.com/Durad82/viewR">GitHub</a>
 <a href="/outerinner">outer/inner snippets example</a>
 <a href="/loop">loop snippet example</a>
 <a href="/component">component example</a>
 </nav>
-</h1>
 <div class="header__separator"></div>
 </header>
 <div class="wrapper">
   <<INSERTION-POINT>>
-<footer class="footer">
+  </div>
+  <footer class="footer">
 ©Adrien Durup
 </footer>
-  </div>
 </body>
 </html>
