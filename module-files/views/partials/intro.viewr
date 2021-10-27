@@ -1,10 +1,9 @@
 <main class="main_intro">
 <section class="incipit">
-<p><strong class="viewr">viewR</strong> is a basic server side view renderer for Node Server.</p>
+<p><strong class="viewr">viewR</strong> is a basic server side <em>view renderer</em> for Node Server.</p>
 <p>It relies on .viewr and .js files, and doesn’t need Express.</p>
 <p>.viewr files are basically HTML-like files with viewr-specific features.</p>
 <p>This project is an experimentation.</p>
 </section>
-<section>
-</section>
+${component("views/partials/textListCard")}
 </main>

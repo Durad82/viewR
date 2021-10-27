@@ -12,7 +12,7 @@ It relies on .viewr and .js files, and doesn’t need Express.
 - axios.
 
 
-## what viewR can’t do
+## What viewR can’t do
 
 - use express features for view engines
 - use js in .viewr files

@@ -46,6 +46,9 @@ button,input{
     font-size: 1rem;
     font-family: "Raleway", sans-serif;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     /* margin-bottom: .7rem; */
 }
 .main_nav a{
@@ -63,6 +66,10 @@ button,input{
     outline: none;
     text-decoration: inherit;
     text-decoration: underline dotted 2px black;
+}
+.main_nav__img{
+    width: 1.2rem;
+    height:1.2rem;
 }
 .header__separator{
     justify-self: flex-end;
@@ -156,4 +163,7 @@ padding:1rem 2rem;
 .incipit p{
 /* margin: .2rem 0; */
 line-height: 1rem;
+}
+.text_section{
+    padding:1rem 2rem;
 }

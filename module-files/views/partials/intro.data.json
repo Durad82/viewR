@@ -1,0 +1,26 @@
+[{
+    "title":"What it can do",
+    "listElemArray":[
+        {"listItemData":"Inject data via variables"},
+        {"listItemData":"Make a reusable wrapping snippet"},
+        {"listItemData":"Insert one or more snippets into a snippet"},
+        {"listItemData":"Insert a repetition of a snippet with data array"},
+        {"listItemData":"Insert a togglable snippet"},
+        {"listItemData":"Insert a viewR Component"}
+    ]
+},
+{
+    "title":"What viewR can’t do",
+    "listElemArray":[
+        {"listItemData":"Use express features for view engines"},
+        {"listItemData":"Use js in .viewr files"}
+    ]
+},
+{
+    "title":"Requirements",
+    "listElemArray":[
+        {"listItemData":"fs module"},
+        {"listItemData":"axios"}
+    ]
+}
+]

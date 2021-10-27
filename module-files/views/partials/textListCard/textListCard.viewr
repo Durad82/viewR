@@ -1,0 +1,6 @@
+<section class="text_section">
+<h2 class="section__title">${title}</h2>
+<ul>
+${loopSnippet("views/partials/textListCard/partials/li",listElemArray)}
+</ul>
+</section>
