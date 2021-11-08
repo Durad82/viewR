@@ -264,6 +264,8 @@ module.exports = CardComponent;
 ## TODO
 
 - array handling
+- Object.child handling debug
+- Add VRComponent queryDataSync and renderSync
 - data storage in engine instance
 
 ## Release Notes

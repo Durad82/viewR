@@ -40,30 +40,52 @@
 		{
 			"include": "#entities"
 		},
-		{ 
-			"include": "#template-variable" 
+		{
+			"include": "#viewr-variable"
 		}
 	],
 	"repository": {
-		"template-variable": {
-			"patterns": [{ "include": "#paren-expression" }]
-		  },
-		  "letter": {
-			"match": "(?<=\\$\\{)\\s{,1}[a-zA-Z_][a-zA-Z_0-9]+\\s{,1}(?=\\})",
+		"viewr-variable": {
+			"patterns": [
+				{
+					"include": "#viewr-paren-expression"
+				},
+				{
+					"include": "#viewr-obj"
+				}
+			]
+		},
+		"letter": {
+			"match": "(?<=\\$\\{)\\s*[a-zA-Z_][a-zA-Z_0-9]+\\s*{,1}(?=\\})",
 			"name": "entity.other.attribute-name"
-		  },
-		  "paren-expression": {
+		},
+		"object":{
+			"match":"[a-zA-Z_][a-zA-Z_0-9]*(\\.[a-zA-Z_0-9]*)+",
+			"name":"entity.other.attribute-name"
+		},
+		"viewr-paren-expression": {
 			"begin": "\\$\\{",
 			"end": "\\}",
 			"beginCaptures": {
-			  "0": { "name": "keyword.letter" }
+				"0": {
+					"name": "keyword.letter"
+				}
 			},
 			"endCaptures": {
-			  "0": { "name": "keyword.letter" }
+				"0": {
+					"name": "keyword.letter"
+				}
 			},
 			"name": "expression.group",
-			"patterns": [{ "include": "#letter" }]
-		  },
+			"patterns": [
+				{
+					"include": "#letter"
+				},
+				{
+					"include": "#object"
+				}
+			]
+		},
 		"attribute": {
 			"patterns": [
 				{

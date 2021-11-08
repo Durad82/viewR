@@ -1,0 +1,10 @@
+${wrapperSnippet("views/partials/pagebase")}
+<main class="main_gamelaunch">
+<div class="main__formwrapper">
+${snippet("views/partials/card",card)}
+<div class="toggleTestBox">
+<a href="/outerinner/?toggleVar=true">On</a>/<a href="/outerinner/?toggleVar=false">Off</a>
+${togglable("views/partials/card",card,toggle)}
+<div class="toggleTestBox">
+<div>
+</main>
