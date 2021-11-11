@@ -12,8 +12,10 @@ const vscode = require('vscode');
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "test" is now active!');
-	console.log(Object.keys(vscode));
+	console.log('viewR Syntax Highlight activated');
+	vscode.window.showInformationMessage('We want emmet activated for viewR !');
+	//console.log(Object.keys(vscode));
+	vscode.commands.executeCommand("vscode.openFolder","/home/student/Documents/Tests perso/viewR-Durad82/viewr-syntax-highlight/ignoreThis");
 	vscode.commands.executeCommand("emmet.includeLanguages",{"viewr":"html"});
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -22,14 +24,17 @@ const vscode = require('vscode');
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Emmet activated for VRMU !');
+		vscode.window.showInformationMessage('We want emmet activated for viewR !');
 	});
 
 	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+console.log('viewR  Highlight deactivated');
+function deactivate() {
+	// vscode.commands.executeCommand("emmet.includeLanguages",{"viewr":"html"});
+}
 
 module.exports = {
 	activate,
