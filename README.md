@@ -67,7 +67,7 @@ viewR <span class="title__baseline">Demo</span>
 at views/index.viewr path.
 
 ```html
-${outerSnippet("views/partials/pageBase")}
+${wrapperSnippet("views/partials/pageBase")}
 <main>
   <div>
     Hello world !
